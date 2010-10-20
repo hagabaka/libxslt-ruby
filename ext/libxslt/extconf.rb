@@ -73,6 +73,7 @@ end
 unless (have_library('xslt','xsltApplyStylesheet') or
         find_library('xslt', 'xsltApplyStylesheet', '/opt/lib', '/usr/local/lib', '/usr/lib')) and
        (have_header('xslt.h') or
+        have_header('libxslt/xslt.h') or
         find_header('xslt.h',
                     '/opt/include/libxslt',
                     '/usr/local/include/libxslt',
@@ -91,6 +92,7 @@ end
 unless (have_library('exslt','exsltLibexsltVersion') or
         find_library('exslt', 'exsltLibexsltVersion', '/opt/lib', '/usr/local/lib', '/usr/lib')) and
        (have_header('exslt.h') or
+        have_header('libexslt/exslt.h') or
         find_header('exslt.h',
                     '/opt/include/libexslt',
                     '/usr/local/include/libexslt',
