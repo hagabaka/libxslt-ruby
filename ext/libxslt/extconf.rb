@@ -46,7 +46,9 @@ unless have_library('m', 'atan')
   $CFLAGS = saveflags
 end
 
-unless have_library("z", "inflate")
+unless have_library("z", "inflate") or
+       have_library("zlib", "inflate") or
+       have_library("zlib1", "inflate")
   crash("need zlib")
 else
   $defs.push('-DHAVE_ZLIB_H')
